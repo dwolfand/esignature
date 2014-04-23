@@ -35,95 +35,33 @@ public class Signature extends AbstractEntity {
 
 	@Column(nullable = false)
 	private String name;
-	private String description;
+	private String signature;
 
-	@Column(nullable = false)
-	private BigDecimal price;
 
-	@ElementCollection
-	private Map<String, String> attributes = new HashMap<String, String>();
-
-	/**
-	 * Creates a new {@link Signature} with the given name.
-	 * 
-	 * @param name must not be {@literal null} or empty.
-	 * @param price must not be {@literal null} or less than or equal to zero.
-	 */
-	public Signature(String name, BigDecimal price) {
-		this(name, price, null);
-	}
-
-	/**
-	 * Creates a new {@link Signature} from the given name and description.
-	 * 
-	 * @param name must not be {@literal null} or empty.
-	 * @param price must not be {@literal null} or less than or equal to zero.
-	 * @param description
-	 */
-	public Signature(String name, BigDecimal price, String description) {
-
-		Assert.hasText(name, "Name must not be null or empty!");
-		Assert.isTrue(BigDecimal.ZERO.compareTo(price) < 0, "Price must be greater than zero!");
-
+	public Signature(String name, String signature) {
 		this.name = name;
-		this.price = price;
-		this.description = description;
+		this.signature = signature;
 	}
 
 	protected Signature() {
 
 	}
 
-	/**
-	 * Sets the attribute with the given name to the given value.
-	 * 
-	 * @param name must not be {@literal null} or empty.
-	 * @param value
-	 */
-	public void setAttribute(String name, String value) {
-
-		Assert.hasText(name);
-
-		if (value == null) {
-			this.attributes.remove(value);
-		} else {
-			this.attributes.put(name, value);
-		}
-	}
-
-	/**
-	 * Returns the {@link Signature}'s name.
-	 * 
-	 * @return
-	 */
 	public String getName() {
 		return name;
 	}
 
-	/**
-	 * Returns the {@link Signature}'s description.
-	 * 
-	 * @return
-	 */
-	public String getDescription() {
-		return description;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	/**
-	 * Returns all the custom attributes of the {@link Signature}.
-	 * 
-	 * @return
-	 */
-	public Map<String, String> getAttributes() {
-		return attributes;
+	public String getSignature() {
+		return signature;
 	}
 
-	/**
-	 * Returns the price of the {@link Signature}.
-	 * 
-	 * @return
-	 */
-	public BigDecimal getPrice() {
-		return price;
+	public void setSignature(String signature) {
+		this.signature = signature;
 	}
+	
+
 }
