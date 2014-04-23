@@ -22,8 +22,11 @@ import javax.persistence.Entity;
 @Entity
 public class Signature extends AbstractEntity {
 
-	@Column(nullable = false)
+
+	@Column
 	private String name;
+	
+	@Column(length=60000)
 	private String signature;
 
 
@@ -43,6 +46,7 @@ public class Signature extends AbstractEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public String getSignature() {
 		return signature;

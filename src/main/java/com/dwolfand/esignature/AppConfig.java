@@ -1,7 +1,10 @@
 package com.dwolfand.esignature;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
+import org.hibernate.cfg.AvailableSettings;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -41,8 +44,17 @@ public class AppConfig {
 		factory.setJpaVendorAdapter(vendorAdapter);
 		factory.setPackagesToScan(getClass().getPackage().getName());
 		factory.setDataSource(dataSource());
-
+		factory.setJpaProperties(hibernateProperties());
 		return factory;
+	}
+	
+	protected Properties hibernateProperties() {
+		Properties hibernateProperties = new Properties();
+		hibernateProperties.setProperty(AvailableSettings.HBM2DDL_AUTO,
+				"update");
+		hibernateProperties.setProperty(AvailableSettings.SHOW_SQL,
+				"false");
+		return hibernateProperties;
 	}
 
 	@Bean
