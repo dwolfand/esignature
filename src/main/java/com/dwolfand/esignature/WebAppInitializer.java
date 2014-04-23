@@ -1,4 +1,4 @@
-package com.sapient.esignatureone;
+package com.dwolfand.esignature;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;

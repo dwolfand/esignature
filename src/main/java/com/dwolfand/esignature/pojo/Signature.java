@@ -13,23 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sapient.esignatureone;
-
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
+package com.dwolfand.esignature.pojo;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
-import org.springframework.util.Assert;
 
-/**
- * A product.
- * 
- * @author Oliver Gierke
- */
 @Entity
 public class Signature extends AbstractEntity {
 
