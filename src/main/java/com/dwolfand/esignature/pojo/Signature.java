@@ -23,7 +23,7 @@ import javax.persistence.Entity;
 public class Signature extends AbstractEntity {
 
 
-	@Column
+	@Column(unique=true)
 	private String name;
 	
 	@Column(length=60000)

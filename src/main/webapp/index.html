@@ -2,40 +2,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
+<meta name=viewport
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Signature Capture</title>
 
-<script src="js/jquery-1.7.min.js"></script>
-<script src="js/modernizr.custom.34982.js"></script>
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+<link rel="stylesheet" href="assets/styles.css" />
 
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/modernizr.custom.34982.js"></script>
 <script src="js/application.js"></script>
 <script src="js/signatureCapture.js"></script>
-<link rel="stylesheet" href="assets/styles.css" />
+<script
+	src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+
 
 </head>
 
 <body>
-	
-    <img src="assets/phonegap.png" />
-    
-    <h2>SAMPLE FORM</h2>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo, arcu eget varius placerat, est turpis tincidunt lectus, vitae semper enim libero sed odio. Curabitur interdum mattis tellus interdum rutrum. Integer vel cursus elit. Praesent et nisl non libero egestas tincidunt eget pellentesque risus. Proin facilisis nulla quis odio lobortis venenatis. </div>
-    
-    <h2>EMAIL</h2>
-    <input id="email" type="email" />
-    
-    <h2>SIGNATURE</h2>
-    <div id="canvasContainer" width="100%" >
-    	<canvas id="signature" height="200px" />
-    </div>
-    
-    <div id="lowerControls">
-    	<div id="feedback"></div>
-        <div id="buttonsContainer">
-            <input type="image" id="submit" src="assets/accept.png" />
-            <input type="image" id="cancel" src="assets/cancel.png" />
-        </div>
-    </div>
+	<div data-role="page" id="main">
+		<div role="main" class="ui-content">
+			<div>Please enter your name and sign or view your signature
+				card</div>
+
+			<label for="text-basic">Name:</label> <input type="text" name="name"
+				id="name" value="">
+
+				<div id="button-container">
+					<button class="ui-btn ui-btn-inline" id="sign-button">Sign</button>
+					<button class="ui-btn ui-btn-inline" id="view-button">View</button>
+				</div>
+
+				<div id="feedback"></div>
+		</div>
+	</div>
+
+	<div data-role="page" id="enter-signature">
+		<div role="main" class="ui-content">
+			<div>Please sign in the box below</div>
+			<div id="canvasContainer">
+				<canvas id="signature" />
+			</div>
+
+			<div id="lowerControls">
+				<div id="buttonsContainer">
+					<button class="ui-btn ui-btn-inline" id="submit">Submit</button>
+					<button class="ui-btn ui-btn-inline" id="cancel">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="view-signature">
+		<div role="main" class="ui-content">
+			<div id="viewName"></div>
+			<div id="viewSignature"></div>
+			<button class="ui-btn ui-btn-inline" id="cancel-view">Cancel</button>
+		</div>
+	</div>
 </body>
 </html>

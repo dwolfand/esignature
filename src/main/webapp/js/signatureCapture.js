@@ -86,8 +86,8 @@ SignatureCapture.prototype.updateCanvas = function (event) {
 SignatureCapture.prototype.toString = function () {
 
 	var dataString = this.canvas.get(0).toDataURL("image/png");
-	var index = dataString.indexOf( "," )+1;
-	dataString = dataString.substring( index );
+	//var index = dataString.indexOf( "," )+1;
+	//dataString = dataString.substring( index );
 	
 	return dataString;
 }
